@@ -1,0 +1,2 @@
+class Scythe < ApplicationRecord
+end
