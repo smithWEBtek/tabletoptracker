@@ -1548,3 +1548,53 @@ Completed 500 Internal Server Error in 70ms (ActiveRecord: 0.6ms)
 NoMethodError (undefined method `authenticate' for #<User:0x007fb21e85ab38>):
   
 app/controllers/sessions_controller.rb:9:in `create'
+Started POST "/signin" for 127.0.0.1 at 2018-09-05 12:34:27 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Hkqp9L9BZZ5Oru7bvAQMyqXhsieC+xIfECgEqfqB4ANtkklFTLxubRvTiXT6prPDthSTt5kD/1UxUsuGEqXxhw==", "user"=>{"email"=>"aellonk@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aellonk@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<User:0x007fb2177728d0>):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/signin" for 127.0.0.1 at 2018-09-05 12:34:34 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 102ms (Views: 93.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2018-09-05 12:34:40 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5k/j265pthdVlvL9Cn+J2Qn2BBX9jPtyPRKgdbOuhmGVlwNqXZS95ADrlVJM3TbQGgMlheZ0FjgcaG9aW4qX5Q==", "user"=>{"email"=>"aellonk@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aellonk@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<User:0x007fb21f1a96d0>):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/signin" for 127.0.0.1 at 2018-09-05 12:35:00 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 94ms (Views: 87.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for 127.0.0.1 at 2018-09-05 12:35:04 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QhGkgJ6kqh1l8bF8YSH93+GHfXKjadzZuQ7T8qHTRLoxyUQxbVmh7jCM1tMng0LW8nJc4riRMZOYdBzdSfdVPg==", "user"=>{"email"=>"aellonk@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aellonk@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<User:0x007fb21db6a1f8>):
+  
+app/controllers/sessions_controller.rb:9:in `create'
