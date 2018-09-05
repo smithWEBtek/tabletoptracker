@@ -1,9 +1,11 @@
-<%= form_for @user, url: signin_path do |f| %>
+<h1>Log In</h1>
+
+<%= form_for @user, url: login_path do |f| %>
 	<%= f.label :email %>
     <%= f.email_field :email %><br>
 
     <%= f.label :password %>
     <%= f.password_field :password, id: 'password' %><br>
 
-    <%= f.submit "Sign In" %>
+    <%= f.submit "Log In" %>
 <% end %>
