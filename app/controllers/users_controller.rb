@@ -13,12 +13,14 @@ class UsersController < ApplicationController
 			session[:user_id] = @user.id
 			redirect_to user_path(@user.id)
 		else
-			flash[:alert] = "Incorrect Email or Password Parameters"
+			flash[:notice] = "Incorrect Email or Password Parameters"
 		end
 	end
 
 	def show
-		@user = User.find(params[:id])
+		if logged_in?
+			set_user
+		end
 	end
 
 	private
