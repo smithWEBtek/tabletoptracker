@@ -1,11 +1,12 @@
 class GamesController < ApplicationController
 	def new
 		@game = Game.new
+		@games = Game.all
 	end
 
 	def create
 		@game = Game.create(game_params)
-		redirect_to game_path(@game)
+		redirect_to new_match_path(@game_id)
 	end
 
 	def show
@@ -15,7 +16,7 @@ class GamesController < ApplicationController
 	private
 
 	def game_params
-		params.require(:game).permit(:name)
+		params.require(:game).permit(:name,)
 	end
 
 end

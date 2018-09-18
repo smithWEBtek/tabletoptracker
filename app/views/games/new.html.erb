@@ -2,8 +2,64 @@
 
 <%= form_for(@game) do |f| %>
 
-	<%= f.label :name %>
+
+
+
+				
+
+					<%= f.label "Select Game" %>
+				    <%= f.collection_select :name, @games, :name, :name %><br>
+
+				    <h4>or add a new one:</h4>
+				    	<%= f.label :name %>
 	<%= f.text_field :name %><br>
+
+				   
+						<%= form_for(@match) do |f| %>
+
+							<%= f.label :faction %>
+						    <%= f.text_field :faction %><br>
+
+							<%= f.label :player_mat %>
+						    <%= f.text_field :player_mat %><br>
+
+						    <%= f.label :score %>
+						    <%= f.number_field :score %><br>
+
+						    <%= f.label :winning_score %>
+						    <%= f.number_field :winning_score %><br>
+
+						    <%= f.label :turns %>
+						    <%= f.number_field :turns %><br>
+
+						    <%= f.label :players %>
+						    <%= f.number_field :players %><br>
+						
+							<%= f.label :airships %>
+							<%= f.check_box :airships %>
+
+							<%= f.label :win %>
+							<%= f.check_box :win %>
+
+							<%= f.label :winner %>
+							<%= f.text_field :winner %>
+
+						    <% end %>
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	<%= f.submit %>
 

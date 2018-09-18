@@ -4,8 +4,11 @@ Rails.application.routes.draw do
     get '/logout' => 'sessions#destroy'
     get '/signup' => 'users#new'
 	resources :users
-	resources :games
-	resources :matches
+	resources :games do
+		resources :matches
+	end
+
+
 	root :to => 'welcome#index'
     
 end
