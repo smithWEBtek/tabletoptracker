@@ -37,12 +37,12 @@
 	       <% end %>
 	   	<% end %> 
 
-		<% else %>	
-			<%= f.fields_for :matches do |match| %>
+	<% else %>	
+		
 
-			<%= match.label :match_date %>
-			<%= match.date_field :match_date %><br>
-			<% end %>
+			<%= f.label :match_date %>
+			<%= f.date_field :match_date %><br>
+		
 
 	<% end %>
 
