@@ -5,8 +5,15 @@ class GamesController < ApplicationController
 	end
 
 	def create
-		@game = Game.create(game_params)
-		redirect_to new_match_path(@game_id)
+		@user = current_user
+		@game = @user.games.build(game_params)
+		raise @game.errors.inspect
+		if @game.save
+		redirect_to new_game_match_path(@game)
+		else
+			redirect_to root_path
+		end
+
 	end
 
 	def show
@@ -16,7 +23,7 @@ class GamesController < ApplicationController
 	private
 
 	def game_params
-		params.require(:game).permit(:name,)
+		params.require(:game).permit(:name)
 	end
 
 end

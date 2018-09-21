@@ -1,9 +1,9 @@
-<h1>Add a game</h1>
+<h1>Select a game</h1>
 
-<%= form_for(@game) do |f| %>
+<%= form_for [@game] do |f| %>
 
 	<%= f.label "Select Game" %>
-	<%= f.collection_select :name, @games, :name, :name %><br>
+	<%= f.collection_select :name, @games, :name, :name, {include_blank: 'Select a game'} %><br>
 
 	<h4>or add a new one:</h4>
 	<%= f.label :name %>
