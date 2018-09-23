@@ -4,7 +4,7 @@ class MatchesController < ApplicationController
 	def index
 		@matches = Match.all
 	end
-	
+
 	def new
 		@game = Game.find(params[:game_id])
 		@games = Game.all
@@ -14,7 +14,10 @@ class MatchesController < ApplicationController
 	def create
 		@game = Game.find(params[:game_id]) # finding the parent
 	    @match = @game.matches.build(match_params)
-	    if @match.save(validate: false) #@match would not save without validate:false
+	    @match.user = current_user
+
+	    if @match.save
+	    # (validate: false) #@match would not save without validate:false
 
 	      redirect_to game_match_path(@game, @match)
 	     # "games/#{@game.id}/matches/#{@match.id}"

@@ -7,7 +7,7 @@ class GamesController < ApplicationController
 	def create
 		@user = current_user
 		@game = @user.games.build(game_params)
-		raise @game.errors.inspect
+		
 		if @game.save
 		redirect_to new_game_match_path(@game)
 		else
