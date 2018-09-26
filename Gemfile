@@ -30,6 +30,7 @@ gem 'rack-flash3'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
+
 # Used to mock an https url
 gem 'thin'
 # Use ActiveStorage variant
