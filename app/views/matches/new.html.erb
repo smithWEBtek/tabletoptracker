@@ -4,6 +4,9 @@
 
 	<% if @game.name == "Scythe" %>
 
+		<%= f.label :match_date %>
+		<%= f.date_field :match_date %><br>
+
 		<%= f.fields_for :matches do |match| %>
 	       <%= match.fields_for :scythes do |scythe| %>
 

@@ -2,13 +2,10 @@
 
 <%= form_for [@game] do |f| %>
 
-	<%= f.label "Select Game" %>
-	<%= f.collection_select :name, @games, :name, :name, {include_blank: 'Select a game'} %><br>
-
-	<h4>or add a new one:</h4>
+	
+	<h4>Add a new game:</h4>
 	<%= f.label :name %>
 	<%= f.text_field :name %><br>
-
 
 	<%= f.submit %>
 

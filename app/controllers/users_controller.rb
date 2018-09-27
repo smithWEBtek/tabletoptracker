@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 	def show
 		if logged_in?
 			set_user
+			@games = @user.games.all
 		end
 	end
 

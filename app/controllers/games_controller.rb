@@ -5,15 +5,14 @@ class GamesController < ApplicationController
 	end
 
 	def create
-		@user = current_user
-		@game = @user.games.build(game_params)
-		
-		if @game.save
+		@game = Game.find_or_initialize_by(game_params)
+		if Game.where(:id => @game.id).exists?
+			redirect_to new_game_match_path(@game)
+		elsif @game.save
 		redirect_to new_game_match_path(@game)
 		else
 			redirect_to root_path
 		end
-
 	end
 
 	def show

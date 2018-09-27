@@ -17,17 +17,18 @@ class MatchesController < ApplicationController
 	    @match.user = current_user
 
 	    if @match.save
-	    # (validate: false) #@match would not save without validate:false
 
 	      redirect_to game_match_path(@game, @match)
 	     # "games/#{@game.id}/matches/#{@match.id}"
 	      # games/:game_id/matches/:id
+
 	    else
 	      redirect_to root_path
 	    end
 	end
 
 	def show
+		@game = Game.find(params[:game_id]) # finding the parent
 		@match = Match.find(params[:id])
 	end
 
