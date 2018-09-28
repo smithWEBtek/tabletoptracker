@@ -17,7 +17,7 @@ class MatchesController < ApplicationController
 	    @match.user = current_user
 
 	    if @match.save
-
+	    	flash[:notice] = "Your match was successfully added!"
 	      redirect_to game_match_path(@game, @match)
 	     # "games/#{@game.id}/matches/#{@match.id}"
 	      # games/:game_id/matches/:id
@@ -29,6 +29,7 @@ class MatchesController < ApplicationController
 
 	def show
 		@game = Game.find(params[:game_id]) # finding the parent
+		@total_matches = @game.matches.count
 		@match = Match.find(params[:id])
 		@user = current_user
 	end

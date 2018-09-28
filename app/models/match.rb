@@ -4,3 +4,4 @@ class Match < ApplicationRecord
 	has_many :scythes
 	accepts_nested_attributes_for :scythes
 end
+

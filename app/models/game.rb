@@ -3,3 +3,5 @@ class Game < ApplicationRecord
 	has_many :users, through: :matches
 	validates :name, uniqueness: true
 end
+
+
