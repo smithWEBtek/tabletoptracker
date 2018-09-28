@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 		if logged_in?
 			set_user
 			@games = @user.games.all
+			@fav = Game.favorite
 		end
 	end
 

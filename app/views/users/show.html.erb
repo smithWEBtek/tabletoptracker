@@ -5,5 +5,9 @@
 		<%= match.match_date %>
 	<% end %>
 <% end %>
+<br>
+<br>
+<p>Your favorite game is <%= @fav %>. 
+	<!-- You played it <%= @total_matches %> times! --></p>
 
 <h3>Add a match <%= link_to 'here', new_game_path %></h3>
