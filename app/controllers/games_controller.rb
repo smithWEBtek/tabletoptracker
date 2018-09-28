@@ -11,7 +11,8 @@ class GamesController < ApplicationController
 		elsif @game.save
 		redirect_to new_game_match_path(@game)
 		else
-			redirect_to root_path
+			flash[:notice] = "That game could not be added. Please try again."
+			redirect_to new_game_path
 		end
 	end
 

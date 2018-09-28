@@ -14,7 +14,8 @@ class UsersController < ApplicationController
 			session[:user_id] = @user.id
 			redirect_to user_path(@user.id)
 		else
-			flash[:notice] = "Incorrect Email or Password Parameters"
+			flash[:notice] = "Incorrect Signup Form Entrie(s), please try again"
+			redirect_to signup_path
 		end
 	end
 
