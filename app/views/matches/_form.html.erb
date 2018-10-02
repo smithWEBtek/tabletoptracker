@@ -38,15 +38,17 @@
 	       <% end %>
 	   	<% end %> 
 
+	   	<%= f.submit %>
+
 	<% else %>	
 		
 
 			<%= f.label :match_date %>
 			<%= f.date_field :match_date %><br>
 		
-
+		<%= f.submit %>
 	<% end %>
 
-	<%= f.submit %>
+	
 
 <% end %>
