@@ -16,6 +16,7 @@
       <th scope="row"><%= game.name %></th>
       <td><% game.matches.each do |match| %>
 		<%= match.match_date %><br>
+    
 		<% end %></td>
 
 		<% if game.name == "Scythe" %>
