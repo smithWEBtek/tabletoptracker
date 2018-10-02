@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 	def show
 		if logged_in?
 			set_user
-			@games = @user.games.all
+			@games = @user.games.all.uniq
 			@fav = Game.favorite
 		end
 	end
