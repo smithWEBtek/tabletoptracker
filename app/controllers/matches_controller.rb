@@ -36,6 +36,6 @@ class MatchesController < ApplicationController
 	private
 
 	def match_params
-		params.require(:match).permit(:user_id, :game_id, :match_date, scythes_attributes: [:faction, :player_mat, :score, :winning_score, :turns, :players, :airships, :win, :winner])
+		params.require(:match).permit(:user_id, :game_id, :match_date, :win, scythes_attributes: [:faction, :player_mat, :score, :winning_score, :turns, :players, :airships, :win, :winner])
 	end
 end

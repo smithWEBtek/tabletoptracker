@@ -1,3 +1,5 @@
-<h4>Match Date:</h4><p><%= @match.match_date %></p><br>
-<h5>You have played <%= @game.name %> <%= total_matches(@game) %> times! </h5>
+<%= render 'show'%>
+
+
+<h5>You have played <%= @game.name %> <%= total_matches(@game) %> times! </h5><br>
 <%= link_to 'Back to All of Your Matches', user_path(@user.id) %>
