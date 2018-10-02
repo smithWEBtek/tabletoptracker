@@ -29,7 +29,6 @@ class MatchesController < ApplicationController
 
 	def show
 		@game = Game.find(params[:game_id]) # finding the parent
-		@total_matches = @game.matches.count
 		@match = Match.find(params[:id])
 		@user = current_user
 	end
