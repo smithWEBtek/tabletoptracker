@@ -9,6 +9,5 @@
 <br>
 <p>Your favorite game is <%= @fav %>. 
 	<!-- You played it <%= @total_matches %> times! --></https://localhost:3000p>
-<% if @path.include?("#{current_user.id}")%>
-<h3>Add a match <%= link_to 'here', new_game_path %></h3>
-<% end %>
+
+<h3><%= user_path%></h3>

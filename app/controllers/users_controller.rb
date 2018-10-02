@@ -24,8 +24,6 @@ class UsersController < ApplicationController
 			set_user
 			@games = @user.games.all
 			@fav = Game.favorite
-			@path = request.path
-	
 		end
 	end
 
