@@ -5,7 +5,7 @@
     <tr>
       <th scope="col">Game Name</th>
       <th scope="col">Date Played</th>
-      <th scope="col">Faction</th>
+      <th scope="col">Won?</th>
     </tr>
   </thead>
   <tbody>
@@ -13,8 +13,13 @@
     <tr>
       <th scope="row"><%= game.name %></th>
       <td><% game.matches.each do |match| %>
-		        <%= match.match_date %><br>
+		      <%= match.match_date %><br>
 		      <% end %>
+      </td>
+
+      <td><% game.matches.each do |match| %>
+           <%= win_column(match) %><br>
+        <% end %>
       </td>
 
 		

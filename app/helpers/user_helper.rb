@@ -4,4 +4,12 @@ module UserHelper
 			link_to('Add a match here', new_game_path)
 		end
 	end
+
+	def win_column(match)
+		 if match.win == true 
+              "Yes" 
+             else 
+              "No" 
+             end 
+	end
 end
