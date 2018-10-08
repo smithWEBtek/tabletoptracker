@@ -30,6 +30,7 @@
         <a class="navbar-brand" href="/login">Log in</a>
         <% end %>
         <% if logged_in? %>
+        <a class="navbar-brand" href="<%= user_path(current_user) %>">My Stats</a>
         <a class="navbar-brand" href="/logout">Log Out</a>
         <% end %>
         </div>
