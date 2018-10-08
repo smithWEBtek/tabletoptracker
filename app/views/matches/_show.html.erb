@@ -1,4 +1,14 @@
-<% if @match.win == true %>
+<p>Faction: <%=  @match.scythe.faction %></p>
+<p>Player Mat: <%=  @match.scythe.player_mat %></p>
+<p>Score: <%=  @match.scythe.score %></p>
+<p>Winning Score: <%=  @match.scythe.winning_score %></p>
+<p>Total Turns: <%=  @match.scythe.turns %></p>
+<p>Total Players: <%=  @match.scythe.players %></p>
+<p>Airships? <%=  @match.scythe.airships %></p>
+<p>Win? <%=  @match.scythe.win %></p>
+<p>Winner: <%=  @match.scythe.winner %></p>
+
+<% if @match.win == 1 %>
 
 <h4>You won on <%= @match.match_date %>.</h4><br>
 
@@ -6,6 +16,8 @@
 
 <h4>You played on <%= @match.match_date %></h4><br>
 <h2>Better luck next time!</h2><br>
+
+
 
 <% end %>
 
