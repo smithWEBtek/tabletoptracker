@@ -15,12 +15,14 @@
     <tr>
       <th scope="row"><%= game.name %></th>
       <td><% game.matches.each do |match| %>
-		<%= match.match_date %><br>
-    
-		<% end %></td>
+		        <%= match.match_date %><br>
+		      <% end %>
+      </td>
 
 		<% if game.name == "Scythe" %>
-
+    <% game.matches.each do |scythe| %><br>
+              <%= scythe[:faction] %>
+            <% end %>
 		<td> </td>
 		<% end %>
 

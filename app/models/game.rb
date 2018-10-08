@@ -2,7 +2,7 @@ class Game < ApplicationRecord
 	has_many :matches
 	has_many :users, through: :matches
 	validates :name, uniqueness: true
-
+	
 
 def self.favorite
 	games = self.all.collect { |game|

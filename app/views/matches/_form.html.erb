@@ -5,8 +5,7 @@
 		<%= f.label :match_date %>
 		<%= f.date_field :match_date %><br>
 
-		<%= f.fields_for :matches do |match| %>
-	       <%= match.fields_for :scythes do |scythe| %>
+		<%= f.fields_for :scythe_attributes do |scythe| %>
 
 	           <%= scythe.label :faction %>
 			    <%= scythe.text_field :faction %><br>
@@ -36,9 +35,10 @@
 				<%= scythe.text_field :winner %><br>
 
 	       <% end %>
-	   	<% end %> 
-
+	   	
+ 
 	   	<%= f.submit %>
+
 
 	<% else %>	
 		
@@ -53,5 +53,5 @@
 	<% end %>
 
 	
-
+	 
 <% end %>
