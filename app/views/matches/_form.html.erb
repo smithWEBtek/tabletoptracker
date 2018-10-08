@@ -3,7 +3,7 @@
 		<%= f.label :match_date %>
 		<%= f.date_field :match_date %><br>
 
-		<%= f.label :win %>
+		<%= f.label 'Did you win?' %>
 		<%= f.check_box :win %><br>
 		
 
@@ -34,10 +34,7 @@
 				<%= scythe.label :airships %>
 				<%= scythe.check_box :airships %><br>
 
-				<%= scythe.label :win %>
-				<%= scythe.check_box :win %><br>
-
-				<%= scythe.label :winner %>
+				<%= scythe.label 'Who won, if not you?' %>
 				<%= scythe.text_field :winner %><br>
 
 	       <% end %>
