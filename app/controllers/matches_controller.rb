@@ -16,11 +16,10 @@ class MatchesController < ApplicationController
 		@game = Game.find(params[:game_id]) # finding the parent
 
 	    @match = @game.matches.build(match_params)
-	 		binding.pry
+	 		 
 	    @match.user = current_user
 
 	    if @match.save
-	    	
 	    	flash[:notice] = "Your match was successfully added!"
 	      redirect_to game_match_path(@game, @match)
 
