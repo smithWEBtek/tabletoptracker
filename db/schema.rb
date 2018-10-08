@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_08_170632) do
+ActiveRecord::Schema.define(version: 2018_10_08_202346) do
 
   create_table "games", force: :cascade do |t|
     t.string "name"
@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 2018_10_08_170632) do
     t.integer "turns"
     t.integer "players"
     t.boolean "airships"
-    t.boolean "win"
     t.string "winner"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
