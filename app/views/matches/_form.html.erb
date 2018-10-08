@@ -1,9 +1,15 @@
 <%= form_for [@game, @match] do |f| %>
 
-	<% if @game.name == "Scythe" %>
-
 		<%= f.label :match_date %>
 		<%= f.date_field :match_date %><br>
+
+		<%= f.label :win %>
+		<%= f.check_box :win %><br>
+		
+
+	<% if @game.name == "Scythe" %>
+
+		
 
 		<%= f.fields_for :scythe_attributes do |scythe| %>
 
@@ -37,21 +43,12 @@
 	       <% end %>
 	   	
  
-	   	<%= f.submit %>
+	   	
 
-
-	<% else %>	
-		
-
-			<%= f.label :match_date %>
-			<%= f.date_field :match_date %><br>
-
-			<%= f.label :win %>
-			<%= f.check_box :win %><br>
-		
-		<%= f.submit %>
-	<% end %>
 
 	
+	<% end %>
+
+	<%= f.submit %>
 	 
 <% end %>

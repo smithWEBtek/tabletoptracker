@@ -1,3 +1,5 @@
+<% if @game == "Scythe" %>
+
 <p>Faction: <%=  @match.scythe.faction %></p>
 <p>Player Mat: <%=  @match.scythe.player_mat %></p>
 <p>Score: <%=  @match.scythe.score %></p>
@@ -8,7 +10,9 @@
 <p>Win? <%=  @match.scythe.win %></p>
 <p>Winner: <%=  @match.scythe.winner %></p>
 
-<% if @match.win == 1 %>
+<% end %>
+
+<% if @match.win == true %>
 
 <h4>You won on <%= @match.match_date %>.</h4><br>
 
