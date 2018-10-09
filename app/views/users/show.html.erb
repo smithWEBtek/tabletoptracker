@@ -42,7 +42,10 @@
 
 <br>
 <br>
-<p>Your favorite game is <%= @fav %>. 
-	<!-- You played it <%= @total_matches %> times! --></https://localhost:3000p>
+<% if current_user_page(current_user) %>
+  <% if current_user.matches.count >= 1  %>
+    <p>Your favorite game is <%= @fav %>. 
+  <% end %>
+<% end %>
 
 <h3><%= current_user_page(current_user) %></h3>
