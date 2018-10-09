@@ -7,6 +7,7 @@ class GamesController < ApplicationController
 	def create
 		@game = Game.find_or_initialize_by(game_params)
 		if Game.where(:id => @game.id).exists?
+		
 			redirect_to new_game_match_path(@game)
 		elsif @game.save
 		redirect_to new_game_match_path(@game)
