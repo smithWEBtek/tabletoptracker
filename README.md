@@ -1,24 +1,33 @@
-# README
+# Tabletop Tracker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Rails app for tracking tabletop gaming data.
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+Clone this repository and then execute:
 
-* System dependencies
+    $ bundle
 
-* Configuration
+    Uses Ruby v2.4.2
 
-* Database creation
+Then run:
+	
+	$ rake db:migrate
+	
+Then run:
 
-* Database initialization
+	$ thin start --ssl 
 
-* How to run the test suite
+	Then open page in browser according to web address displayed in terminal (ex. https://localhost:3000)
 
-* Services (job queues, cache servers, search engines, etc.)
+## Usage
 
-* Deployment instructions
+After you sign up or sign in through Facebook, you can add and view all of your games and matches. 
 
-* ...
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/aellonk/tabletoptracker.
+
+## License
+
+This app is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
