@@ -8,7 +8,7 @@ Clone this repository and then execute:
 
     $ bundle
 
-    Uses Ruby v2.4.2
+Uses Ruby v2.4.2
 
 Then run:
 	
@@ -18,7 +18,7 @@ Then run:
 
 	$ thin start --ssl 
 
-	Then open page in browser according to web address displayed in terminal (ex. https://localhost:3000)
+Then open page in browser according to web address displayed in terminal (ex. https://localhost:3000)
 
 ## Usage
 
