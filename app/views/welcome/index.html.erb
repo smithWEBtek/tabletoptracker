@@ -1,5 +1,9 @@
 <h1>Welcome to Tabletop Tracker!</h1>
-
+<h4>A place for you to keep track of your tabletop gaming history. </h4>
+<% if logged_in? %>
+    <h3><a href="<%= user_path(current_user) %>">Go to My Stats</a></h3>
+<% else %>
 <h2>New to TT? Sign up <%= link_to 'here', signup_path %>.</h2>
 <h2>Already have an account? Log in <%= link_to 'here', login_path %>.</h2>
 <%= link_to('Log in with Facebook!', '/auth/facebook') %>
+<% end %>
