@@ -9,18 +9,13 @@
     </tr>
   </thead>
   <tbody>
-    <% @games.each do |game| %>
+    <% @user.matches.each do |match| %>
     <tr>
-      <th scope="row"><%= game.name %></th>
-      <td><% game.matches.each do |match| %>
-		      <%= match.match_date %><br>
-		      <% end %>
-      </td>
+      <th scope="row"><%= match.game.name %></th>
+      <td><%= match.match_date %></td>
+      <td><%= win_column(match) %><br></td>
 
-      <td><% game.matches.each do |match| %>
-           <%= win_column(match) %><br>
-        <% end %>
-      </td>
+      
 
 		
 
