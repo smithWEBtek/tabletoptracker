@@ -1,5 +1,7 @@
 <%= render 'show'%>
 
 
-<h5>You have played <%= @game.name %> <%= total_matches(@game) %> times! </h5><br>
+<!-- <h5>You have played <%= @game.name %> <%= total_matches(@game) %> times! </h5><br> -->
+<%= link_to 'Delete Match', game_match_path(@game, @match), method: :delete %><br>
+
 <%= link_to 'Back to All of Your Matches', user_path(@user.id) %>
