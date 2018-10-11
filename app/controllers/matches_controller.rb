@@ -55,6 +55,15 @@ class MatchesController < ApplicationController
 	    end
 	end
 
+	def destroy
+		@game = Game.find(params[:game_id])
+		@match = Match.find(params[:id])
+		@user = current_user
+		@match.destroy
+		flash[:alert] = "Your match was successfully deleted."
+		redirect_to user_path(@user.id)
+	end
+
 	private
 
 	def match_params
