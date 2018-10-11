@@ -38,6 +38,23 @@ class MatchesController < ApplicationController
 
 	end
 
+	def edit
+		@game = Game.find(params[:game_id])
+		@match = Match.find(params[:id])
+	end
+
+	def update
+		@game = Game.find(params[:game_id])
+		@match = Match.find(params[:id])
+
+		if @match.update(match_params)
+		flash[:alert] = "Your match was successfully updated."
+		redirect_to game_match_path(@game, @match)
+		else
+	      redirect_to root_path
+	    end
+	end
+
 	private
 
 	def match_params
