@@ -23,10 +23,7 @@ class Game < ApplicationRecord
 
 
 
-# game.matches.count >= 3
-# .sort_by(&:to_i)
+
 
 end
 
-# sort games by game.matches.count
-# detect the first game
