@@ -7,16 +7,14 @@ class MatchesController < ApplicationController
 	end
 
 	def new
-		@game = Game.find(params[:game_id])
+		set_game
 		@games = Game.all
 		@match = Match.new
 	end
 
 	def create
-		@game = Game.find(params[:game_id]) # finding the parent
-
+		set_game
 	    @match = @game.matches.build(match_params)
-	 		 
 	    @match.user = current_user
 
 	    if @match.save
@@ -32,20 +30,20 @@ class MatchesController < ApplicationController
 	end
 
 	def show
-		@game = Game.find(params[:game_id]) # finding the parent
-		@match = Match.find(params[:id])
+		set_game
+		set_match
 		@user = current_user
 
 	end
 
 	def edit
-		@game = Game.find(params[:game_id])
-		@match = Match.find(params[:id])
+		set_game
+		set_match
 	end
 
 	def update
-		@game = Game.find(params[:game_id])
-		@match = Match.find(params[:id])
+		set_game
+		set_match
 
 		if @match.update(match_params)
 		flash[:alert] = "Your match was successfully updated."
@@ -56,8 +54,8 @@ class MatchesController < ApplicationController
 	end
 
 	def destroy
-		@game = Game.find(params[:game_id])
-		@match = Match.find(params[:id])
+		set_game
+		set_match
 		@user = current_user
 		@match.destroy
 		flash[:alert] = "Your match was successfully deleted."
@@ -68,6 +66,14 @@ class MatchesController < ApplicationController
 
 	def match_params
 		params.require(:match).permit(:user_id, :game_id, :match_date, :win, scythe_attributes: [:faction, :player_mat, :score, :winning_score, :turns, :players, :airships, :winner])
+	end
+
+	def set_game
+		@game = Game.find(params[:game_id])
+	end
+
+	def set_match
+		@match = Match.find(params[:id])
 	end
 
 	
