@@ -1,7 +1,7 @@
 <h1><%= @user.name %>'s Stats</h1>
  <% @user.games.uniq.each do |game| %>
 
- <h3><%= game.name %> Matches </h3>
+ <h3 id="gamename"><%= game.name %> Matches </h3>
 <table class="table table-hover">
   <thead>
     <tr>
@@ -16,7 +16,7 @@
       
       <td><%= match.match_date %></td>
       <td><%= win_column(match) %><br></td>
-      <td><%= link_to 'Delete Match', game_match_path(match.game, match), method: :delete, data: {confirm: "Are you sure?"}  %></td>
+      <td><%= link_to 'Delete', game_match_path(match.game, match), method: :delete, data: {confirm: "Are you sure?"}  %></td>
       <td><%= link_to 'Edit', edit_game_match_path(match.game, match) %></td>
     </tr>
     <% end %>
