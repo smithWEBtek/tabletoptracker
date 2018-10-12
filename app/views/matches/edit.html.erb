@@ -1,0 +1,55 @@
+<h1>Edit match</h1>
+
+<%= form_for [@game, @match] do |f| %>
+
+		<%= f.label :match_date %>
+		<%= f.date_field :match_date %><br>
+
+		<%= f.label 'Did you win?' %>
+		<%= f.check_box :win %><br>
+		
+
+	<% if @game.name == "Scythe" %>
+
+		
+
+		<%= f.fields_for :scythe_attributes do |scythe| %>
+
+	           <%= scythe.label :faction %>
+			    <%= scythe.text_field :faction, value: "#{@match.scythe.faction}" %><br>
+
+				<%= scythe.label :player_mat %>
+			    <%= scythe.text_field :player_mat %><br>
+
+			    <%= scythe.label :score %>
+			    <%= scythe.number_field :score %><br>
+
+			    <%= scythe.label :winning_score %>
+			    <%= scythe.number_field :winning_score %><br>
+
+			    <%= scythe.label :turns %>
+			    <%= scythe.number_field :turns %><br>
+
+			    <%= scythe.label :players %>
+			    <%= scythe.number_field :players %><br>
+			
+				<%= scythe.label :airships %>
+				<%= scythe.check_box :airships %><br>
+
+				<%= scythe.label 'Who won, if not you?' %>
+				<%= scythe.text_field :winner %><br>
+
+	       <% end %>
+	   	
+ 
+	   	
+
+
+	
+	<% end %>
+
+	<%= f.submit %>
+	 
+<% end %>
+
+
