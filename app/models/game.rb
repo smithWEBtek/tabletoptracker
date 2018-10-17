@@ -2,20 +2,12 @@ class Game < ApplicationRecord
 	has_many :matches
 	has_many :users, through: :matches
 	validates :name, uniqueness: true
-	scope :favorite, -> {where games = self.all.collect { |game|
-	 	if
-	 		game.matches.count > 1
+	scope :favorite, -> {where(games=self.all.collect { |game|
 	 		game.matches.count
-	 		game.name
-	 	else
-	 		"going to be the one that you play the most"
-	 	end
-	 	
-	 }
+	 		game.name})
 
-	 games.sort_by(&:to_i).last
-}
-	
+	games.group_by{|x| x}.sort_by{|k, v| -v.size}.map(&:first).first
+	}
 
 # def self.favorite
 # 	games = self.all.collect { |game|
@@ -23,7 +15,7 @@ class Game < ApplicationRecord
 # 	 	game.name
 # 	 }
 
-# 	 games.sort_by(&:to_i).last
+# 	 games.sort_
 
 # end
 
