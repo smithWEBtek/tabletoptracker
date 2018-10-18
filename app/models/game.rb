@@ -6,7 +6,7 @@ class Game < ApplicationRecord
 	 		game.matches.count
 	 		game.name})
 
-	games.group_by{|x| x}.sort_by{|k, v| -v.size}.map(&:first).first
+	games.group_by{|x| x}.sort_by{|k, v| -v.size}.map{|game| game.first}.first
 	}
 
 # def self.favorite
