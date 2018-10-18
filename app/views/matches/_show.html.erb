@@ -1,4 +1,4 @@
-<% if @game == "Scythe" %>
+<% if @game.name == "Scythe" %>
 
 <p>Faction: <%=  @match.scythe.faction %></p>
 <p>Player Mat: <%=  @match.scythe.player_mat %></p>
@@ -6,8 +6,12 @@
 <p>Winning Score: <%=  @match.scythe.winning_score %></p>
 <p>Total Turns: <%=  @match.scythe.turns %></p>
 <p>Total Players: <%=  @match.scythe.players %></p>
-<p>Airships? <%=  @match.scythe.airships %></p>
+<% if @match.scythe.airships %>
+<p>This match included Wind Gambit.</p>
+<% end %>
+<% if !@match.win %>
 <p>Winner: <%=  @match.scythe.winner %></p>
+<% end %>
 
 <% end %>
 
