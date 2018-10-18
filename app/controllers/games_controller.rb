@@ -24,6 +24,8 @@ class GamesController < ApplicationController
 		
 	end
 
+	
+
 	private
 
 	def game_params
