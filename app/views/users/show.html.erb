@@ -14,7 +14,7 @@
    <% game.matches.where(user_id: @user.id).each do |match| %>
     <tr>
       
-      <td><%= match.match_date %></td>
+      <td><%= link_to match.match_date, game_match_path(match.game, match) %></td>
       <td><%= win_column(match) %><br></td>
       <td><%= link_to 'Delete', game_match_path(match.game, match), method: :delete, data: {confirm: "Are you sure?"}  %></td>
       <td><%= link_to 'Edit', edit_game_match_path(match.game, match) %></td>
