@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 		resources :matches
 	end
 
+	resources :scythes, only: [:index]
+
 
 	root :to => 'welcome#index'
     
