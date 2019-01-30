@@ -31,6 +31,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
 
+gem 'active_model_serializers'
 # Used to mock an https url
 gem 'thin'
 # Use ActiveStorage variant
