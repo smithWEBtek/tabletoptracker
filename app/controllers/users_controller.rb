@@ -24,6 +24,7 @@ class UsersController < ApplicationController
 			set_user
 			@games = @user.games.all.uniq
 			@fav = @user.games.favorite 
+			render json: @user, status: 200
 		end
 	end
 
