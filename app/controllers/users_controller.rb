@@ -24,7 +24,10 @@ class UsersController < ApplicationController
 			set_user
 			@games = @user.games.all.uniq
 			@fav = @user.games.favorite 
-			render json: @user, status: 200
+			respond_to do |format|
+      format.html { render :show }      # Render post in HTML format
+      format.json { render json: @user} # Render post in JSON format
+    end
 		end
 	end
 
