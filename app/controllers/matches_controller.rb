@@ -10,6 +10,8 @@ class MatchesController < ApplicationController
 		set_game
 		@games = Game.all
 		@match = Match.new
+
+		# render :new, layout: false
 	end
 
 	def create
